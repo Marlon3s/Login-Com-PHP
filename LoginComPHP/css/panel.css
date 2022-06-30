@@ -1,0 +1,17 @@
+.container{
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    margin-top: -200px;
+    margin-left: -200px;
+}
+
+.botton{
+    border-style: solid;
+    border-color: black;
+    background-color: cadetblue;
+}
+
