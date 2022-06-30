@@ -9,13 +9,13 @@ if(empty($_POST['usuario']) || empty($_POST['senha'])){
 }
 
 //Variáveis de controle contra SQLInjection
-$user = mysqli_real_escape_string($conexao, $_POST['usuario']);
-$password = mysqli_real_escape_string($conexao, $_POST['senha']);
+$user = mysqli_real_escape_string($conect, $_POST['usuario']);
+$password = mysqli_real_escape_string($conect, md5($_POST['senha']));
 
-$query = "select usuario_id, usuario from usuario where usuario = '{$user}' and senha = md5('{$password}')";
+$query = "select usuario from usuario where usuario = '$user' and senha = '$password'";
 
 //Executando query de SELECT
-$result = mysqli_query($conexao, $query);
+$result = mysqli_query($conect, $query);
 
 //Validando se o usuário existe na base de dados
 $row = mysqli_num_rows($result);
