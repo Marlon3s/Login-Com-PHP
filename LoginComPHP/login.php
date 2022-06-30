@@ -1,5 +1,4 @@
 <?php
-include('flush_cache.php');
 session_start();
 include('conect.php');
 
