@@ -20,7 +20,7 @@ Crie um banco de dados com os seguintes valores:
 
 ```
 CREATE DATABASE login;
-USE Login;
+USE login;
 
 CREATE TABLE usuario(
     usuario_id int primary key auto_increment,
