@@ -1,10 +1,12 @@
 # Login Com PHP
 
 ### Português
-Uma tela de login simples com validação de usuário no banco de dados, validação URL, LogOut de usuário e segurança contra SQLInjection.
+Uma tela de login simples com validação de usuário no banco de dados, validação URL, LogOut de usuário, segurança contra SQLInjection.
+Update: tela de cadastro e validação de usuários já cadastrados.
 
 ### Inglês
 A simple login screen with database user validation, validation URL, user LogOut and SQLInjection security.
+Update: screen for registering and validating already registered users.
 
 ## 🚀 Começando
 
@@ -25,18 +27,20 @@ USE login;
 CREATE TABLE usuario(
     usuario_id int primary key auto_increment,
     usuario varchar(200) not null,
-    senha varchar(32) not null
+    senha varchar(32) not null,
+    data_cadastro datetime not null,
+    nome varchar(100)
 );
-INSERT INTO usuario(usuario, senha) VALUES("Marlom", md5("123456"));
-INSERT INTO usuario(usuario, senha) VALUES("Marco", md5("123456"));
+INSERT INTO usuario(usuario, senha, data_cadastro, nome) VALUES("Marlon3s", md5("123456"), now(), "Marlom");
+INSERT INTO usuario(usuario, senha, data_cadastro, nome) VALUES("Marcon3s", md5("123456"), now(), "Marco");
 
 ```
 A estrutura de seu banco ficara assim:
 
-| usuario_id | usuario | senha |
-|------------|---------|-------|
-| 1          | Marlom  | e10adc3949ba59abbe56e057f20f883e |
-| 2          | Marco   | e10adc3949ba59abbe56e057f20f883e |
+| usuario_id | usuario | senha | data_cadastro | nome |
+|------------|---------|-------| ------------- | ---- |
+| 1          | Marlom  | e10adc3949ba59abbe56e057f20f883e | (data atual) | Marlom |
+| 2          | Marco   | e10adc3949ba59abbe56e057f20f883e | (data atual) | Marco |
 
 ## ⚙️ Executando
 
